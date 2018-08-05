@@ -49,7 +49,7 @@
     • `%m` - month (e.g. 01 to 12)
     • `%d` - day (e.g. 01 to 31)
     • `%f` - folder name of this mail
-    • `%%` - replaced by a single percent sign |
+    • `%%` - replaced by a single percent sign
 
 ### EXAMPLES
 Archive messages from Sent and all INBOX folders after 90 days:
