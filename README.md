@@ -42,20 +42,19 @@
 ##### --age=N
     Only touch messages older than N days. Default is 365 days.
 ##### --dest=F
-    Path to destination maildir folder. Default is './Archive/%y/%m'.
+    Path to destination maildir folder. Default is './Archive/%{Y}/%{M}'.
 
     The following patterns will be substituted:
-    • `%y` - year (e.g. 2018)
-    • `%m` - month (e.g. 01 to 12)
-    • `%d` - day (e.g. 01 to 31)
-    • `%f` - folder name of this mail
-    • `%%` - replaced by a single percent sign
+    • '%{Y}' -> year (e.g. 2018)
+    • '%{M}' -> month (01 to 12)
+    • '%{D}' -> day (01 to 31)
+    • '%{F}' -> folder name of this mail
 
 ### EXAMPLES
 Archive messages from Sent and all INBOX folders after 90 days:
   
-    cleanup-maildir --age=90 --dest=./Archive/%f archive ./Sent ./INBOX*
+    cleanup-maildir --age=90 --dest=./Archive/%{F} archive ./Sent ./INBOX*
 
-Delete over 1 year old message in 'Lists/debian-devel' folder, except messages that are flagged as unread:
+Delete over 1 year old messages in 'Lists/debian-devel' folder, except messages that are flagged as unread:
   
     cleanup-maildir --keep-new delete! './Lists.debian-devel'
