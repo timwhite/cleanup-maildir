@@ -26,36 +26,39 @@
   delete! - permanently delete old messages (will be gone forever!)
 
 ### OPTIONS
-  -h, --help
-      Show this help.
-  -q, --quiet
-      Suppress normal output.
-  -v, --verbose
-      Output extra information for testing.
-  -d, --dry-run
-      Do not actually touch any files; just say what would be done.
-  -n, --keep-new
-      Do not touch messages that are flagged as unread or new.
-  -t, --keep-threads
-      Do not touch messages if any message in this thread is flagged.
-      Note: the thread-detection mechanism is currently based purely on
-      a message's subject. The In-Reply-To header is not observed yet.
-  --age=N
-      Only touch messages older than N days. Default is 365 days.
-  --dest=F
-      Path to destination maildir folder. Default is './Archive/%y/%m'.
+#### -h, --help
+    Show this help.  
+#### -q, --quiet
+    Suppress normal output.
+#### -v, --verbose
+    Output extra information for testing.
+#### -d, --dry-run
+    Do not actually touch any files; just say what would be done.
+#### -n, --keep-new
+    Do not touch messages that are flagged as unread or new.
+#### -t, --keep-threads
+    Do not touch messages if any message in this thread is flagged.
+      
+    Note: the thread-detection mechanism is currently based purely on
+    a message's subject. The In-Reply-To header is not observed yet.
+#### --age=N
+    Only touch messages older than N days. Default is 365 days.
+#### --dest=F
+    Path to destination maildir folder. Default is './Archive/%y/%m'.
 
-      The following patterns will be substituted:
-        `%y` - year (e.g. 2018)
-        `%m` - month (e.g. 01 to 12)
-        `%d` - day (e.g. 01 to 31)
-        `%f` - folder name of this mail
-        `%%` - replaced by a single percent sign
+    The following patterns will be substituted:
+    • `%y` - year (e.g. 2018)
+    • `%m` - month (e.g. 01 to 12)
+    • `%d` - day (e.g. 01 to 31)
+    • `%f` - folder name of this mail
+    • `%%` - replaced by a single percent sign |
 
 ### EXAMPLES
   Archive messages from Sent and all INBOX folders after 90 days:
+  
   `cleanup-maildir --age=90 --dest=./Archive/%f archive ./Sent ./INBOX*"`
 
   Delete over 1 year old message in 'Lists/debian-devel' folder,
   except messages that are flagged as unread:
+  
   `cleanup-maildir --keep-new delete! './Lists.debian-devel'`
