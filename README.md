@@ -1,3 +1,4 @@
+<pre>
         .__                                     
    ____ |  |   ____ _____    ____  __ ________  
  _/ ___\|  | _/ __ \\__  \  /    \|  |  \____ \ 
@@ -10,20 +11,21 @@
  |  Y Y  \/ __ \|  |  |__/ /_/ | |  ||  | \/    
  |__|_|  (____  /__|____/\____ | |__||__|       
        \/     \/              \/                
+</pre>
 
-USAGE
+### USAGE
   cleanup-maildir [OPTION].. COMMAND FOLDERNAME..
 
-DESCRIPTION
+### DESCRIPTION
   Cleans up old messages in FOLDERNAME; the exact action taken
   depends on COMMAND. Multiple FOLDERNAMEs or GLOB patterns are
   allowed. Be aware that there is no filter for duplicates.
 
-COMMANDS
+### COMMANDS
   archive - move old messages to destination folder
   delete! - permanently delete old messages (will be gone forever!)
 
-OPTIONS
+### OPTIONS
   -h, --help
       Show this help.
   -q, --quiet
@@ -44,16 +46,16 @@ OPTIONS
       Path to destination maildir folder. Default is './Archive/%y/%m'.
 
       The following patterns will be substituted:
-        %y - year (e.g. 2018)
-        %m - month (e.g. 01 to 12)
-        %d - day (e.g. 01 to 31)
-        %f - folder name of this mail
-        %% - replaced by a single percent sign
+        `%y` - year (e.g. 2018)
+        `%m` - month (e.g. 01 to 12)
+        `%d` - day (e.g. 01 to 31)
+        `%f` - folder name of this mail
+        `%%` - replaced by a single percent sign
 
-EXAMPLES
-  # Archive messages from Sent and all INBOX folders after 90 days:
-  cleanup-maildir --age=90 --dest=./Archive/%f archive ./Sent ./INBOX*"
+### EXAMPLES
+  Archive messages from Sent and all INBOX folders after 90 days:
+  `cleanup-maildir --age=90 --dest=./Archive/%f archive ./Sent ./INBOX*"`
 
-  # Delete over 1 year old message in 'Lists/debian-devel' folder,
-  # except messages that are flagged as unread:
-  cleanup-maildir --keep-new delete! './Lists.debian-devel'
+  Delete over 1 year old message in 'Lists/debian-devel' folder,
+  except messages that are flagged as unread:
+  `cleanup-maildir --keep-new delete! './Lists.debian-devel'`
