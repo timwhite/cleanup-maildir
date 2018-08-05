@@ -20,8 +20,8 @@
   allowed. Be aware that there is no filter for duplicates.
 
 ### COMMANDS
-  archive - move old messages to destination folder
-  delete! - permanently delete old messages (will be gone forever!)
+* archive - move old messages to destination folder
+* delete! - permanently delete old messages (will be gone forever!)
 
 ### OPTIONS
 ##### -h, --help
