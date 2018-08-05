@@ -54,7 +54,7 @@
 ### EXAMPLES
 Archive messages from Sent and all INBOX folders after 90 days:
   
-    cleanup-maildir --age=90 --dest=./Archive/%f archive ./Sent ./INBOX*"
+    cleanup-maildir --age=90 --dest=./Archive/%f archive ./Sent ./INBOX*
 
 Delete over 1 year old message in 'Lists/debian-devel' folder, except messages that are flagged as unread:
   
